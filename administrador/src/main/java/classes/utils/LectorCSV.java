@@ -17,7 +17,7 @@ public class LectorCSV {
 
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linia;
-            boolean primeralinia = true;
+            boolean primeralinia = true;        
 
             while ((linia = br.readLine()) != null) {
                 // Per saltarme la primera línia en cas de que sigui un header
