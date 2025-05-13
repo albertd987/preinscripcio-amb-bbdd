@@ -17,8 +17,6 @@ public class ConnexioBBDD {
     private static String CONTRASENYA;
 
     static {
-        // Carreguem les propietats de la connexió a la base de dades des d'un arxiu de
-        // configuració el qual es troba a /resources
         try (FileInputStream fis = new FileInputStream("administrador\\src\\main\\resources\\config.properties")) {
             Properties properties = new Properties();
             properties.load(fis);

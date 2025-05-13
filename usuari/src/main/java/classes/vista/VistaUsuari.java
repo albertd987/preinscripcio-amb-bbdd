@@ -183,29 +183,24 @@ public class VistaUsuari extends JFrame {
             menuAccions.show(btnAccions, 0, btnAccions.getHeight());
         });
         
-        // Inicialitzar combo d'opcions (1, 2, 3)
         String[] opcions = {"1", "2", "3"};
         comboOpcio1.setModel(new DefaultComboBoxModel<>(opcions));
         comboOpcio2.setModel(new DefaultComboBoxModel<>(opcions));
         comboOpcio3.setModel(new DefaultComboBoxModel<>(opcions));
     }
     
-    // Mètode per afegir un alumne al comboBox
     public void afegirAlumne(String dni, String nom) {
         comboAlumne.addItem(dni);
     }
     
-    // Mètode per afegir un centre al comboBox
     public void afegirCentre(String codi, String nom, JComboBox<String> combo) {
         combo.addItem(nom);
     }
-    
-    // Mètode per afegir un estudi al comboBox
+
     public void afegirEstudi(String codi, String nom, JComboBox<String> combo) {
         combo.addItem(nom);
     }
     
-    // Mètode per netejar tots els camps
     public void netejarCamps() {
         comboAlumne.setSelectedIndex(-1);
         lblNomAlumne.setText("");

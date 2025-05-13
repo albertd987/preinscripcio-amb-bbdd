@@ -13,16 +13,11 @@ import classes.model.Estudi;
 import classes.utils.ConnexioBBDD;
 
 public class CentreEstudiDAO {
-    
-    /**
-     * Processa i insereix les dades de centres i estudis des de Centre_Estudis.csv
-     * @param dades Llista de arrays de strings amb les dades del fitxer CSV
-     * @return Un array amb [nombreCentresInserits, nombreEstudisInserits, nombreRelacionsInserides]
-     */
+
     public int[] processarCentresEstudis(List<String[]> dades) {
         int[] resultats = new int[3]; // [centres, estudis, relacions]
         
-        // Utilitzem Maps per evitar duplicats
+        // Utilitzo Maps per evitar duplicats, així a la base de dades no em cal fer trigger x controlar-ho
         Map<String, Centre> centres = new HashMap<>();
         Map<String, Estudi> estudis = new HashMap<>();
         Map<String, CentreEstudi> relacions = new HashMap<>();
@@ -65,11 +60,6 @@ public class CentreEstudiDAO {
         return resultats;
     }
     
-    /**
-     * Insereix centres a la base de dades
-     * @param centres Array de centres a inserir
-     * @return nombre de centres inserits
-     */
     private int inserirCentres(Centre[] centres) {
         String sql = "INSERT INTO Centres (codi_centre, nom_centre) VALUES (?, ?)";
         int comptador = 0;
@@ -102,11 +92,6 @@ public class CentreEstudiDAO {
         return comptador;
     }
     
-    /**
-     * Insereix estudis a la base de dades
-     * @param estudis Array d'estudis a inserir
-     * @return nombre d'estudis inserits
-     */
     private int inserirEstudis(Estudi[] estudis) {
         String sql = "INSERT INTO Estudis (codi_estudi, nom_estudi) VALUES (?, ?)";
         int comptador = 0;
@@ -139,11 +124,7 @@ public class CentreEstudiDAO {
         return comptador;
     }
     
-    /**
-     * Insereix relacions centre-estudi a la base de dades
-     * @param relacions Array de relacions a inserir
-     * @return nombre de relacions inserides
-     */
+    
     private int inserirRelacions(CentreEstudi[] relacions) {
         String sql = "INSERT INTO Centre_Estudis (codi_centre, codi_estudi) VALUES (?, ?)";
         int comptador = 0;

@@ -10,11 +10,7 @@ import classes.utils.ConnexioBBDD;
 
 public class AlumneDAO {
     
-    /**
-     * Insereix múltiples alumnes a la base de dades
-     * @param alumnes Llista d'alumnes a inserir
-     * @return nombre d'alumnes inserits correctament
-     */
+
     public int inserirAlumnes(List<Alumne> alumnes) {
         String sql = "INSERT INTO Alumnes (dni, nom_alumne) VALUES (?, ?)";
         int comptador = 0;
@@ -37,10 +33,10 @@ public class AlumneDAO {
                 }
             }
             
-            // Fem commit dels canvis
+            // Faig commit dels canvis
             conn.commit();
             
-            // Restaurem l'autocommit
+            // Restauro l'autocommit
             conn.setAutoCommit(true);
             
         } catch (SQLException e) {

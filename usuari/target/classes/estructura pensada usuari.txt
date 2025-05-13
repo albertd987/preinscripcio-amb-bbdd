@@ -17,7 +17,7 @@ classes/
 ├── utils/
 │   └── ConnexioBBDD.java
 ├── vista/
-│   ├── VistaUsuari.java
+│   ├── VistaUsuari.java   //en procés
 │   ├── VistaAlta.java
 │   ├── VistaBaixa.java
 │   ├── VistaModificacio.java

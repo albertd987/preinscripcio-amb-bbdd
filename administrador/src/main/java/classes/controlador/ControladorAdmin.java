@@ -13,27 +13,16 @@ public class ControladorAdmin {
         this.model = model;
         this.vista = vista;
         llistarNomFitxers();
-        
-        // Afegim els action listeners als botons
         afegirListeners();
     }
-    
-    /**
-     * Afegeix els listeners als components de la vista
-     */
+
     private void afegirListeners() {
-        // Botó carregar amb lambda
         vista.btnCarregar.addActionListener(e -> carregarFitxer());
-        
-        // Botó sortir amb lambda
         vista.btnSortir.addActionListener(e -> System.exit(0));
     }
     
-    /**
-     * Llista els fitxers CSV al combobox
-     */
     public void llistarNomFitxers() {
-        vista.comboFitxer.removeAllItems(); // Netegem el combobox
+        vista.comboFitxer.removeAllItems();
         
         File[] fitxers = model.getFitxers();
         if (fitxers != null && fitxers.length > 0) {
@@ -46,22 +35,16 @@ public class ControladorAdmin {
         }
     }
     
-    /**
-     * Carrega el fitxer seleccionat a la base de dades
-     */
+
     private void carregarFitxer() {
-        // Comprovem si hi ha algun fitxer seleccionat
         String nomFitxerSeleccionat = (String) vista.comboFitxer.getSelectedItem();
         if (nomFitxerSeleccionat == null || nomFitxerSeleccionat.isEmpty()) {
             vista.lblError.setText("Cal seleccionar un fitxer");
             return;
         }
         
-        // Construïm la ruta completa del fitxer
         String rutaFitxer = "administrador\\src\\main\\resources\\" + nomFitxerSeleccionat;
         File fitxer = new File(rutaFitxer);
-        
-        // Comprovem que el fitxer existeix
         if (!fitxer.exists()) {
             vista.lblError.setText("El fitxer no existeix: " + rutaFitxer);
             return;
@@ -77,6 +60,7 @@ public class ControladorAdmin {
             } else if (nomFitxerSeleccionat.toLowerCase().contains("centre") || 
                       nomFitxerSeleccionat.toLowerCase().contains("estudi")) {
                 // Carreguem fitxer de centres i estudis
+                // El model processa el fitxer i retorna el nombre de centres, estudis i relacions, aquests es reflexen a la vista
                 int[] resultats = model.carregarCentresEstudis(rutaFitxer);
                 vista.lblError.setText("S'han inserit " + resultats[0] + " centres, " +
                                        resultats[1] + " estudis i " +
@@ -87,6 +71,7 @@ public class ControladorAdmin {
             }
             
         } catch (Exception ex) {
+            //qualsevol excepció es mostrarà al mateix label de la vista, tot i que no hi hauria d'haver cap excepció en aquest programa
             vista.lblError.setText("Error al carregar el fitxer: " + ex.getMessage());
             ex.printStackTrace();
         }

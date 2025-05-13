@@ -32,12 +32,7 @@ public class ModelAdmin {
         }
         return null;
     }
-    
-    /**
-     * Carrega i processa el fitxer d'alumnes
-     * @param rutaFitxer Ruta al fitxer d'alumnes
-     * @return Nombre d'alumnes inserits
-     */
+
     public int carregarAlumnes(String rutaFitxer) {
         try {
             List<String[]> dadesAlumnes = LectorCSV.llegirCSVsenseHeader(rutaFitxer);
@@ -59,12 +54,7 @@ public class ModelAdmin {
             return 0;
         }
     }
-    
-    /**
-     * Carrega i processa el fitxer de centres i estudis
-     * @param rutaFitxer Ruta al fitxer de centres i estudis
-     * @return Un array amb [nombreCentresInserits, nombreEstudisInserits, nombreRelacionsInserides]
-     */
+
     public int[] carregarCentresEstudis(String rutaFitxer) {
         try {
             List<String[]> dades = LectorCSV.llegirCSVambHeader(rutaFitxer);
