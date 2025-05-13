@@ -1,0 +1,24 @@
+classes/
+├── controlador/
+│   └── ControladorAdmin.java        // Controla la lógica de l'interficie d'administrador, relaciona els events amb totes les altres capes
+│
+├── dao/
+│   ├── AlumneDAO.java              // Operacions d'inserció dels alumnes
+│   └── CentreEstudiDAO.java        // Operacions d'inserció de centres i estudis
+│
+├── model/
+│   ├── Alumne.java                 // Classe model de l'alumne (dni, nom)
+│   ├── Centre.java                 // Classe model de centre (codi, nom)
+│   ├── CentreEstudi.java           // Classe model de la relació centre-estudi
+│   ├── Estudi.java                 // Classe model d'estudi (codi, nom)
+│   ├── ModelAdmin.java             // Modelo principal de la lògica de l'administrador
+│   └── Preinscripcio.java          // Classe model de la preinscripcio
+│
+├── utils/
+│   ├── ConnexioBBDD.java           // Gestionarà la connexió a la base de dades
+│   └── LectorCSV.java              // Llegirà i processarà el csv escollit
+│
+├── vista/
+│   └── VistaAdmin.java             // Interficie gràfica de l'administrador
+│
+└── Main.java                       // Punt d'entrada de l'app

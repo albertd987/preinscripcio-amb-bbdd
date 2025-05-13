@@ -1,0 +1,25 @@
+classes/
+├── controlador/
+│   └── ControladorUsuari.java
+├── dao/
+│   ├── AlumneDAO.java
+│   ├── CentreDAO.java
+│   ├── EstudiDAO.java
+│   ├── CentreEstudiDAO.java
+│   └── PreinscripcioDAO.java
+├── model/
+│   ├── Alumne.java
+│   ├── Centre.java
+│   ├── CentreEstudi.java
+│   ├── Estudi.java
+│   ├── ModelUsuari.java
+│   └── Preinscripcio.java
+├── utils/
+│   └── ConnexioBBDD.java
+├── vista/
+│   ├── VistaUsuari.java
+│   ├── VistaAlta.java
+│   ├── VistaBaixa.java
+│   ├── VistaModificacio.java
+│   └── VistaConsulta.java
+└── Main.java
