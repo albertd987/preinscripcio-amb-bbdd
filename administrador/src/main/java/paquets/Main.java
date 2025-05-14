@@ -1,4 +1,4 @@
-package classes;
+package paquets;
 
 import classes.controlador.ControladorAdmin;
 import classes.model.ModelAdmin;

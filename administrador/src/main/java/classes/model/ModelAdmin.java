@@ -40,8 +40,8 @@ public class ModelAdmin {
             
             for (String[] fila : dadesAlumnes) {
                 if (fila.length >= 2) {
-                    String dni = fila[0];
-                    String nomAlumne = fila[1];
+                    String dni = fila[1];
+                    String nomAlumne = fila[0];
                     alumnes.add(new Alumne(dni, nomAlumne));
                 }
             }

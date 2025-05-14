@@ -1,10 +1,13 @@
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\controlador\ControladorAdmin.java
-C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\Main.java
+C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\dao\AlumneDAO.java
+C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\dao\CentreEstudiDAO.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\Alumne.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\Centre.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\CentreEstudi.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\Estudi.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\ModelAdmin.java
+C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\model\Preinscripcio.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\utils\ConnexioBBDD.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\utils\LectorCSV.java
 C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\classes\vista\VistaAdmin.java
+C:\Users\domen\Desktop\PROJECTE FINAL BBDD\administrador\src\main\java\paquets\Main.java
