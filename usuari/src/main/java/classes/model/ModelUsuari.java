@@ -21,7 +21,10 @@ public class ModelUsuari {
         this.estudiDAO = new EstudiDAO();
         this.centreEstudiDAO = new CentreEstudiDAO();
         this.preinscripcioDAO = new PreinscripcioDAO();
-        public boolean existeixPreinscripcio(String codiEstudi, String codiCentre, String dni) {
+    }
+    
+
+    public boolean existeixPreinscripcio(String codiEstudi, String codiCentre, String dni) {
         return preinscripcioDAO.existeixPreinscripcio(codiEstudi, codiCentre, dni);
     }
     
@@ -33,6 +36,7 @@ public class ModelUsuari {
         return preinscripcioDAO.comptarPreinscripcionsPerAlumne(dni);
     }
     
+
     public List<Alumne> obtenirAlumnes() {
         return alumneDAO.obtenirTots();
     }
@@ -60,10 +64,9 @@ public class ModelUsuari {
     public List<Centre> obtenirCentresByEstudi(String codiEstudi) {
         return centreEstudiDAO.obtenirCentresByEstudi(codiEstudi);
     }
-    
-    // Mètodes varis x les operacions CRUD
-    
+
     public boolean altaPreinscripcio(Preinscripcio preinscripcio) {
+
         if (preinscripcio.getPrioritat() < 1 || preinscripcio.getPrioritat() > 3) {
             return false;
         }

@@ -53,7 +53,7 @@ public class VistaUsuari extends JFrame {
     public JMenuItem itemConsulta;
     public JMenuItem itemSortir;
     
-    // Título del modo actual
+    //Títol del mode actual
     public JLabel lblModePantalla;
     
     public VistaUsuari() {
@@ -73,7 +73,7 @@ public class VistaUsuari extends JFrame {
         // Layout null per a controlar la posició dels components manualment
         getContentPane().setLayout(null);
         
-        // Título del modo actual
+
         lblModePantalla = new JLabel("Mode: CONSULTA");
         lblModePantalla.setFont(new java.awt.Font("Arial", 1, 14));
         lblModePantalla.setHorizontalAlignment(SwingConstants.CENTER);

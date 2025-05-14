@@ -16,7 +16,7 @@ import classes.utils.ConnexioBBDD;
 
 public class CentreEstudiDAO {
 
-    // Método existente para procesar centros y estudios desde el módulo de administrador
+
     public int[] processarCentresEstudis(List<String[]> dades) {
         int[] resultats = new int[3]; // [centres, estudis, relacions]
         
@@ -161,7 +161,7 @@ public class CentreEstudiDAO {
         return comptador;
     }
     
-    // Nuevos métodos para el módulo de usuario
+    // Nous mètodes per la secció de l'usuari
     
     public List<CentreEstudi> obtenirTots() {
         List<CentreEstudi> relacions = new ArrayList<>();
@@ -184,7 +184,7 @@ public class CentreEstudiDAO {
         
         return relacions;
     }
-    
+
     public List<Estudi> obtenirEstudisByCentre(String codiCentre) {
         List<Estudi> estudis = new ArrayList<>();
         String sql = "SELECT e.codi_estudi, e.nom_estudi " +
@@ -253,7 +253,7 @@ public class CentreEstudiDAO {
             stmt.setString(2, codiEstudi);
             
             try (ResultSet rs = stmt.executeQuery()) {
-                return rs.next(); // Si hay resultados, la relación existe
+                return rs.next(); // Si hi han resultats hi ha una relació existent
             }
             
         } catch (SQLException e) {

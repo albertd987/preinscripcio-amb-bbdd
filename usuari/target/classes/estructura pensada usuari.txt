@@ -1,3 +1,9 @@
+**
+**AL FINAL NO LA HE SEGUIDA GAIRE AQUESTA ESTRUCTURA, CREC QUE ERA LA IDEAL, 
+**PERÒ NO TENIA TEMPS PER FER-HO TANT ORGANITZAT AIXÍ QUE SIMPLEMENT M'HE ASSEGURAT QUE ALMENYS SIGUI FUNCIONAL
+**I TINGUI ALGO DE SENTIT
+**
+
 classes/
 ├── controlador/
 │   └── ControladorUsuari.java
@@ -11,11 +17,11 @@ classes/
 │   ├── Alumne.java
 │   ├── Centre.java
 │   ├── CentreEstudi.java
-│   ├── Estudi.java
+│   
 │   ├── ModelUsuari.java
 │   └── Preinscripcio.java
 ├── utils/
-│   └── ConnexioBBDD.java
+│   └── ConnexioBBDD.java //no feta, la reciclo directament d'admin, chapusa però no tinc temps per pensar-ho tant
 ├── vista/
 │   ├── VistaUsuari.java   //en procés
 │   ├── VistaAlta.java
