@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+import javax.swing.SwingConstants;
 
 public class VistaUsuari extends JFrame {
     // Components per a la selecció d'alumne
@@ -52,6 +53,9 @@ public class VistaUsuari extends JFrame {
     public JMenuItem itemConsulta;
     public JMenuItem itemSortir;
     
+    // Título del modo actual
+    public JLabel lblModePantalla;
+    
     public VistaUsuari() {
         setTitle("Gestió de Preinscripcions");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,6 +73,13 @@ public class VistaUsuari extends JFrame {
         // Layout null per a controlar la posició dels components manualment
         getContentPane().setLayout(null);
         
+        // Título del modo actual
+        lblModePantalla = new JLabel("Mode: CONSULTA");
+        lblModePantalla.setFont(new java.awt.Font("Arial", 1, 14));
+        lblModePantalla.setHorizontalAlignment(SwingConstants.CENTER);
+        lblModePantalla.setBounds(200, 5, 250, 20);
+        getContentPane().add(lblModePantalla);
+        
         // Secció d'alumne
         lblAlumne = new JLabel("Alumne:");
         lblAlumne.setBounds(100, 30, 70, 25);
@@ -78,7 +89,7 @@ public class VistaUsuari extends JFrame {
         comboAlumne.setBounds(200, 30, 150, 25);
         getContentPane().add(comboAlumne);
         
-        lblNomAlumne = new JLabel("Cognom1 Cognom2, Nom");
+        lblNomAlumne = new JLabel("");
         lblNomAlumne.setBounds(360, 30, 200, 25);
         getContentPane().add(lblNomAlumne);
         
@@ -147,14 +158,14 @@ public class VistaUsuari extends JFrame {
         getContentPane().add(comboOpcio3);
         
         // Missatge d'error o èxit
-        lblMissatge = new JLabel("Missatge d'èxit o error al validar");
+        lblMissatge = new JLabel("");
         lblMissatge.setForeground(Color.RED);
-        lblMissatge.setBounds(30, 240, 300, 25);
+        lblMissatge.setBounds(30, 240, 400, 25);
         getContentPane().add(lblMissatge);
         
         // Botó de validar
-        btnValidar = new JButton("Validar");
-        btnValidar.setBounds(530, 240, 90, 30);
+        btnValidar = new JButton("Consultar");
+        btnValidar.setBounds(520, 240, 100, 30);
         getContentPane().add(btnValidar);
         
         // Botó d'accions i menú d'accions
@@ -189,37 +200,26 @@ public class VistaUsuari extends JFrame {
         comboOpcio3.setModel(new DefaultComboBoxModel<>(opcions));
     }
     
-    public void afegirAlumne(String dni, String nom) {
-        comboAlumne.addItem(dni);
-    }
-    
-    public void afegirCentre(String codi, String nom, JComboBox<String> combo) {
-        combo.addItem(nom);
-    }
-
-    public void afegirEstudi(String codi, String nom, JComboBox<String> combo) {
-        combo.addItem(nom);
-    }
-    
     public void netejarCamps() {
         comboAlumne.setSelectedIndex(-1);
         lblNomAlumne.setText("");
         
         comboCentre1.setSelectedIndex(-1);
-        comboEstudis1.setSelectedIndex(-1);
+        comboEstudis1.removeAllItems();
         comboOpcio1.setSelectedIndex(-1);
         
         comboCentre2.setSelectedIndex(-1);
-        comboEstudis2.setSelectedIndex(-1);
+        comboEstudis2.removeAllItems();
         comboOpcio2.setSelectedIndex(-1);
         
         comboCentre3.setSelectedIndex(-1);
-        comboEstudis3.setSelectedIndex(-1);
+        comboEstudis3.removeAllItems();
         comboOpcio3.setSelectedIndex(-1);
         
         lblMissatge.setText("");
     }
-    public static void main(String[] args) {
-        new VistaUsuari().setVisible(true);
+    
+    public void setModePantalla(String mode) {
+        lblModePantalla.setText("Mode: " + mode);
     }
 }
