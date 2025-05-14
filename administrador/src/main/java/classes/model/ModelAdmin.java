@@ -22,7 +22,7 @@ public class ModelAdmin {
 
     public File[] getFitxers() {
         if (carpeta.exists()) {
-            File[] fitxers = carpeta.listFiles((dir, name) -> name.toLowerCase().endsWith(".csv"));
+            File[] fitxers = carpeta.listFiles((directori, nom) -> nom.toLowerCase().endsWith(".csv"));
             if (fitxers != null) {
                 for (File fitxer : fitxers) {
                     System.out.println(fitxer.getName());

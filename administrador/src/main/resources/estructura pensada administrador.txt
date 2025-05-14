@@ -11,7 +11,7 @@ classes/
 │   ├── Centre.java                 // Classe model de centre (codi, nom)
 │   ├── CentreEstudi.java           // Classe model de la relació centre-estudi
 │   ├── Estudi.java                 // Classe model d'estudi (codi, nom)
-│   ├── ModelAdmin.java             // Modelo principal de la lògica de l'administrador
+│   ├── ModelAdmin.java             // Model principal de la lògica de l'administrador
 │   └── Preinscripcio.java          // Classe model de la preinscripcio
 │
 ├── utils/
