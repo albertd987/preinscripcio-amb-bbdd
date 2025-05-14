@@ -21,7 +21,6 @@ public class ControladorUsuari {
     private ModelUsuari model;
     private VistaUsuari vista;
     
-    // Estado actual
     private Alumne alumneActual;
     private String modePantalla = "CONSULTA"; // ALTA, BAIXA, MODIFICACIO, CONSULTA
     private List<Preinscripcio> preinscripcionsAEliminar = new ArrayList<>();

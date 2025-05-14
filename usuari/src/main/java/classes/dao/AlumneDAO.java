@@ -11,7 +11,7 @@ import classes.model.Alumne;
 import classes.utils.ConnexioBBDD;
 
 public class AlumneDAO {
-    
+
     public int inserirAlumnes(List<Alumne> alumnes) {
         String sql = "INSERT INTO Alumnes (dni, nom_alumne) VALUES (?, ?)";
         int comptador = 0;
@@ -41,8 +41,6 @@ public class AlumneDAO {
             conn.setAutoCommit(true);
             
         } catch (SQLException e) {
-            System.err.println("Error general al inserir alumnes: " + e.getMessage());
-            e.printStackTrace();
         }
         
         return comptador;
@@ -65,8 +63,6 @@ public class AlumneDAO {
             }
             
         } catch (SQLException e) {
-            System.err.println("Error al obtenir els alumnes: " + e.getMessage());
-            e.printStackTrace();
         }
         
         return alumnes;
@@ -88,8 +84,7 @@ public class AlumneDAO {
             }
             
         } catch (SQLException e) {
-            System.err.println("Error al obtenir l'alumne: " + e.getMessage());
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         
         return null;

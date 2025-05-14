@@ -18,8 +18,7 @@ public class Main {
             try (Connection conn = ConnexioBBDD.getConnection()) {
                 System.out.println("Connexió a la base de dades establerta correctament.");
             } catch (SQLException e) {
-                String message = "Error de connexió a la base de dades: " + e.getMessage() + 
-                        "\nAssegureu-vos que el servidor MySQL està en marxa i que les dades de connexió són correctes.";
+                String message = "Error de connexió a la base de dades: " + e.getMessage();
                 JOptionPane.showMessageDialog(null, message, "Error de connexió", JOptionPane.ERROR_MESSAGE);
                 System.err.println(message);
                 return;

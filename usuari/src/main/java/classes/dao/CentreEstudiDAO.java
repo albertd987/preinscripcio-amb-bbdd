@@ -144,9 +144,6 @@ public class CentreEstudiDAO {
                     stmt.executeUpdate();
                     comptador++;
                 } catch (SQLException e) {
-                    System.err.println("Error al inserir la relació entre centre " + 
-                            relacio.getCodiCentre() + " i estudi " + relacio.getCodiEstudi() + 
-                            ": " + e.getMessage());
                 }
             }
             
@@ -154,7 +151,7 @@ public class CentreEstudiDAO {
             conn.setAutoCommit(true);
             
         } catch (SQLException e) {
-            System.err.println("Error general al inserir relacions centre-estudi: " + e.getMessage());
+            System.err.println( e.getMessage());
             e.printStackTrace();
         }
         
@@ -178,7 +175,7 @@ public class CentreEstudiDAO {
             }
             
         } catch (SQLException e) {
-            System.err.println("Error al obtenir les relacions centre-estudi: " + e.getMessage());
+            System.err.println(e.getMessage());
             e.printStackTrace();
         }
         
@@ -207,7 +204,7 @@ public class CentreEstudiDAO {
             }
             
         } catch (SQLException e) {
-            System.err.println("Error al obtenir els estudis per centre: " + e.getMessage());
+            System.err.println(e.getMessage());
             e.printStackTrace();
         }
         
@@ -236,7 +233,7 @@ public class CentreEstudiDAO {
             }
             
         } catch (SQLException e) {
-            System.err.println("Error al obtenir els centres per estudi: " + e.getMessage());
+            System.err.println(e.getMessage());
             e.printStackTrace();
         }
         
